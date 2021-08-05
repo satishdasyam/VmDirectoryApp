@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:contentDescription="@string/emp_details"
+        app:title="@string/emp_details"/>
+
+    <ImageView
+        android:id="@+id/iv_emp"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/ab_employee_picture"
+        android:layout_margin="@dimen/small_space" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_space"
+        android:layout_marginStart="@dimen/medium_space"
+        android:labelFor="@+id/tv_emp_name"
+        android:layout_marginEnd="@dimen/medium_space"
+        android:hint="@string/name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_emp_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            tools:text="Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_space"
+        android:layout_marginStart="@dimen/medium_space"
+        android:layout_marginEnd="@dimen/medium_space"
+        android:labelFor="@+id/tv_job"
+        android:hint="@string/job">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            tools:text="Job" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_space"
+        android:layout_marginStart="@dimen/medium_space"
+        android:layout_marginEnd="@dimen/medium_space"
+        android:labelFor="@+id/tv_email"
+        android:hint="@string/email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="email"
+            android:enabled="false"
+            tools:text="Email" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_space"
+        android:layout_marginStart="@dimen/medium_space"
+        android:layout_marginEnd="@dimen/medium_space"
+        android:labelFor="@+id/tv_phone"
+        android:hint="@string/contact_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="phone"
+            android:enabled="false"
+            tools:text="Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

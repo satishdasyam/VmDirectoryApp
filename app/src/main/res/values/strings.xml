@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">VmDirectoryApp</string>
+    <string name="search">Search</string>
+    <string name="name">Name</string>
+    <string name="job">Job</string>
+    <string name="email">Email</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="emp_details">Employee Details</string>
+    <string name="ab_emp_details">Employee Details Title</string>
+    <string name="ab_employee_picture">Employee Picture</string>
+    <string name="clear">Clear</string>
+    <string name="ab_employees_tab">Employees</string>
+    <string name="ab_ofc_rooms">Office Rooms</string>
+    <string name="max_occupancy">Max Occupancy : %s</string>
+    <string name="ofc_room_availability">Availability : </string>
+</resources>
