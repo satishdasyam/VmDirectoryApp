@@ -7,18 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'ubuntu-latest'
 
 # container: adoptopenjdk:latest
 
 steps:
-  # Java tool installer v0
-  # Acquire a specific version of Java from a user-supplied Azure blob or the tool cache and sets JAVA_HOME.
-- task: JavaToolInstaller@0
-    inputs:
-      versionSpec: '11' # string. Required. JDK version. Default: 8.
-      jdkArchitectureOption: 'x64' # 'x64' | 'x86'. Required. JDK architecture.
-      jdkSourceOption: 'PreInstalled' # 'AzureStorage' | 'LocalDirectory' | 'PreInstalled'. Required. JDK source.
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -28,3 +21,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleBrandVMDevDebug'
   displayName: gradlew assembleBrandVMDevDebug
+- script: |
+    echo "Linux command test"
+
+
