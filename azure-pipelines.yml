@@ -21,7 +21,8 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleBrandVMDevDebug'
   displayName: gradlew assembleBrandVMDevDebug
-- script: |
-    echo "Linux command test"
+- bash: |  # Can you script to instead of bash
+    echo "Hello world from $AGENT_NAME running on $AGENT_OS"
+  displayName: Bash Script
 
 
