@@ -9,6 +9,8 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
+container: adoptopenjdk:latest
+
 steps:
 - task: Gradle@2
   inputs:
