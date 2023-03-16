@@ -6,13 +6,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.dasyam.vmdirectoryapp"
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion 26
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -26,19 +25,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-        qa {
+        debug {
             initWith debug
             //manifestPlaceholders = [hostName:"internal.example.com"]
-            applicationIdSuffix ".qa"
+            applicationIdSuffix ".debug"
             buildConfigField "String", "BASE_URL", "\"https://5f7c2c8400bd74001690a583.mockapi.io/api/v1/\""
         }
 
-        prod {
+        /*prod {
             initWith release
             applicationIdSuffix ".prod"
             buildConfigField "String", "BASE_URL", "\"https://prod.url/\""
+        }*/
+    }
+    flavorDimensions "brand", "environment"
+    productFlavors {
+        dev {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // This property is optional if you are using only one dimension.
+            dimension "environment"
+            /*applicationIdSuffix ".demo"
+            versionNameSuffix "-demo"*/
+        }
+        prod {
+            dimension "environment"
+            /*applicationIdSuffix ".full"
+            versionNameSuffix "-full"*/
+        }
+        brandVM {
+            dimension "brand"
+            //applicationId "com.satish.vm"
+        }
+        brandCB {
+            dimension "brand"
+            //applicationId "com.satish.cb"
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
