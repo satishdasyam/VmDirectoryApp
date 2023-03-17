@@ -1,0 +1,11 @@
+# Android
+# Build your Android project with Gradle.
+# Add steps that test, sign, and distribute the APK, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/android
+- bash: |  # You can also use 'script' instead of bash
+    echo "Hello world from $AGENT_NAME running on $AGENT_OS"
+    echo "Build folder $(build.artifactStagingDirectory)"
+    echo "PWD: " pwd
+    ls -al $(build.artifactStagingDirectory)
+    displayName: Bash Script
+

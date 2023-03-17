@@ -6,7 +6,7 @@
 
 parameters:
   - name: executeBash
-    displayName: Should we print bash?
+    displayName: Execute bash task?
     type: boolean
     default: true
 
@@ -40,13 +40,7 @@ steps:
     artifactType: 'container'
   displayName: Publish artifacts
 - ${{ if eq(parameters.executeBash, true) }}:
-  - bash: |  # You can also use 'script' instead of bash
-      echo "Hello world from $AGENT_NAME running on $AGENT_OS"
-      echo "Build folder $(build.artifactStagingDirectory)"
-      echo "PWD: "
-      pwd
-      ls -al $(build.artifactStagingDirectory)
-    displayName: Bash Script
+    - template: azure_templates/bash_script.yml  # Template reference
 
 #  Store each of the following passwords in a secret variable.
 # https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#secret-variables
