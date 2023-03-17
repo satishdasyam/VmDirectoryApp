@@ -8,5 +8,4 @@ steps:
     echo "Build folder $(build.artifactStagingDirectory)"
     echo "PWD: " pwd
     ls -al $(build.artifactStagingDirectory)
-    displayName: Bash Script
 
