@@ -5,7 +5,7 @@
 
 
 parameters:
-  - name: bash_print
+  - name: executeBash
     displayName: Should we print bash?
     type: boolean
     default: true
@@ -39,7 +39,7 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
-- ${{ if eq(parameters.Deploy_Dev, true) }}:
+- ${{ if eq(parameters.executeBash, true) }}:
   - bash: |  # You can also use 'script' instead of bash
       echo "Hello world from $AGENT_NAME running on $AGENT_OS"
       echo "Build folder $(build.artifactStagingDirectory)"
