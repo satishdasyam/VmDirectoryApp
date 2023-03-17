@@ -11,7 +11,20 @@ parameters:
     default: true
 
 trigger:
-- master
+  - master
+  - releases/*
+
+pr:
+  - main
+  - releases/*
+
+#pr:
+#  branches:
+#    include:
+#      - main
+#      - releases/*
+#    exclude:
+#      - releases/old*
 
 pool:
   vmImage: 'ubuntu-latest'
