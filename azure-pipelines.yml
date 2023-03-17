@@ -21,8 +21,25 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleBrandVMDevDebug'
   displayName: gradlew assembleBrandVMDevDebug
-- bash: |  # Can you script to instead of bash
+task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+  displayName: Copy .apk files to artifact staging directory
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'drop'
+    artifactType: 'container'
+  displayName: Publish artifacts
+- bash: |  # You can also use 'script' instead of bash
     echo "Hello world from $AGENT_NAME running on $AGENT_OS"
+    echo "Build folder $(build.artifactStagingDirectory)"
+    echo "PWD: "
+    pwd
+    ls $(build.artifactStagingDirectory)
+
   displayName: Bash Script
 
 
