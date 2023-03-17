@@ -21,12 +21,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleBrandVMDevDebug'
   displayName: gradlew assembleBrandVMDevDebug
-task: CopyFiles@2
+- task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
     targetFolder: '$(build.artifactStagingDirectory)'
   displayName: Copy .apk files to artifact staging directory
-
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)'
