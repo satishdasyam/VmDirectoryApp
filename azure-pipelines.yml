@@ -6,9 +6,9 @@
 
 parameters:
   - name: bash_print
-    displayName: Sould we print bash?
+    displayName: Should we print bash?
     type: boolean
-    default: yes
+    default: true
 
 trigger:
 - master
