@@ -42,6 +42,8 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleBrandVMDevDebug testBrandVMDevDebugUnitTest'
   displayName: gradlew assembleBrandVMDevDebug
+- ${{ if eq(parameters.executeBash, true) }}:
+   - template: azure_templates/bash_script.yml  # Template reference
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
