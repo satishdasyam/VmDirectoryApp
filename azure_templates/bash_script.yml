@@ -7,5 +7,6 @@ steps:
     echo "Hello world from $AGENT_NAME running on $AGENT_OS"
     echo "Build folder $(build.artifactStagingDirectory)"
     echo "PWD: " $(pwd)
+    ls -al $(pwd)
     ls -al "$(build.artifactStagingDirectory)/app/build/outputs/apk/brandVMDev/debug"
     echo "Print apk filepath"
