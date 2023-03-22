@@ -21,6 +21,7 @@ pr:
 #pr:
 #  branches:
 #    include:
+#      - '*'  # for every branch
 #      - main
 #      - releases/*
 #    exclude:
