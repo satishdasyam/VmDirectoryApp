@@ -6,6 +6,8 @@ steps:
 - bash: |  # You can also use 'script' instead of bash
     echo "Hello world from $AGENT_NAME running on $AGENT_OS"
     echo "Build folder $(build.artifactStagingDirectory)"
+    echo "Source Branch $(Build.SourceBranch)"
+    echo "Source Branch small $(build.sourceBranch)"
     echo "PWD: " $(pwd)
     ls -al $(pwd)
     ls -al "$(build.artifactStagingDirectory)/app/build/outputs/apk/brandVMDev/debug"
